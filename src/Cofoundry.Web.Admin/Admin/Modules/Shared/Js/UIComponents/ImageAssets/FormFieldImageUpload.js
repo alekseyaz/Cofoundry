@@ -19,12 +19,20 @@ angular.module('cms.shared').directive('cmsFormFieldImageUpload', [
             loadState: '=cmsLoadState'
         }),
         passThroughAttributes: ['required', 'ngRequired'],
-        getInputEl: getInputEl
+        getInputEl: getInputEl,
+        link: link
     };
 
     return baseFormFieldFactory.create(config);
 
     function getInputEl(rootEl) {
         return rootEl.find('cms-image-upload');
+    }
+
+    function link(scope) {
+        console.log(scope);
+
+        // call base
+        baseFormFieldFactory.defaultConfig.link.apply(this, arguments);
     }
 }]);
