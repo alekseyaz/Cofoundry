@@ -123,7 +123,7 @@ Task("PushNuGetPackage")
         if (isPrerelease)
         {
             NuGetPush(nugets, new NuGetPushSettings {
-                Source = "https://www.myget.org/F/cofoundry/api/v2/package",
+                Source = "https://www.myget.org/F/zaac-cofoundry/api/v2/package",
                 ApiKey = EnvironmentVariable("MYGET_API_KEY")
             });
         }
